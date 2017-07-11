@@ -20,21 +20,33 @@
         android:id="@+id/busiNum"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
-        android:hint="e-mail"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/name"
         android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="-12dp"
+        android:hint="Business Number"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="8dp" />
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="43dp"
+        android:hint="Address"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <Button
         android:id="@+id/updateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="345dp"
         android:text="Update Data"
         app:layout_constraintTop_toBottomOf="@+id/busiNum"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="8dp"
         android:onClick="updateContact"/>
@@ -44,12 +56,157 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Erase Contact"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="345dp"
         app:layout_constraintTop_toBottomOf="@+id/busiNum"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="-2dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginEnd="8dp"
         android:onClick="eraseContact"/>
+
+    <RadioGroup
+        android:id="@+id/province"
+        android:layout_width="174dp"
+        android:layout_height="228dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/primBusi">
+
+        <RadioButton
+            android:id="@+id/provAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:duplicateParentState="false"
+            android:text="AB" />
+
+        <RadioButton
+            android:id="@+id/provBC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="BC" />
+
+        <RadioButton
+            android:id="@+id/provMB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MB" />
+
+        <RadioButton
+            android:id="@+id/provNB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NB" />
+
+        <RadioButton
+            android:id="@+id/provNL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:duplicateParentState="false"
+            android:text="NL" />
+
+        <RadioButton
+            android:id="@+id/provNS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NS" />
+
+        <RadioButton
+            android:id="@+id/provNT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NT" />
+
+        <RadioButton
+            android:id="@+id/provNU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NU" />
+
+        <RadioButton
+            android:id="@+id/provON"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:duplicateParentState="false"
+            android:text="ON" />
+
+        <RadioButton
+            android:id="@+id/provPE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PE" />
+
+        <RadioButton
+            android:id="@+id/provQC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="QC" />
+
+        <RadioButton
+            android:id="@+id/provSK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SK" />
+
+        <RadioButton
+            android:id="@+id/provYT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="YT" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/primBusi"
+        android:layout_width="197dp"
+        android:layout_height="58dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/address">
+
+        <RadioButton
+            android:id="@+id/Fisher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:duplicateParentState="false"
+            android:text="Fisher" />
+
+        <RadioButton
+            android:id="@+id/Distributor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Distributor" />
+
+        <RadioButton
+            android:id="@+id/Processor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Processor" />
+
+        <RadioButton
+            android:id="@+id/Monger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Monger" />
+    </RadioGroup>
 
 
 

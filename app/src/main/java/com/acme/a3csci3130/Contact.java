@@ -34,6 +34,15 @@ public class Contact implements Serializable {
         this.prov = prov;
     }
 
+    public void updateData(String uid, String name, String busiType, int busiNum, String address, String prov){
+        this.uid = uid;
+        this.name = name;
+        this.busiNum = busiNum;
+        this.busiType = busiType;
+        this.address = address;
+        this.prov = prov;
+    }
+
     @Exclude
     public Map<String, Object> toMap(){
         HashMap<String, Object> result = new HashMap<>();

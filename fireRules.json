@@ -4,11 +4,15 @@
     ".write": "true",
     "contacts": {
             "$contact": {
+				".validate" : "newData.hasChildren(['name', 'busiType', 'busiNum', 'address', 'prov'])",
                 "name": {
-                    ".validate": "newData.isString() && newData.val().length < 50"
+                    ".validate": "newData.isString() && newData.val().length < 49 && newData.val().length > 1"
                 },
-                "email": {
-                    ".validate": "newData.isString() && newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
+                "busiNum": {
+                    ".validate": "newData.isString() && newData.val().length = 9"
+                }
+				"busiType": {
+                    ".validate": "newData.isString() && newData.val().length = 9"
                 }
             }
         }
