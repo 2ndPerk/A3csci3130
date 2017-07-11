@@ -25,6 +25,15 @@ public class Contact implements Serializable {
         // Default constructor required for calls to DataSnapshot.getValue
     }
 
+    /**
+     * constructor
+     * @param uid id
+     * @param name name
+     * @param busiType business type
+     * @param busiNum business number
+     * @param address address
+     * @param prov province or territory
+     */
     public Contact(String uid, String name, String busiType, int busiNum, String address, String prov){
         this.uid = uid;
         this.name = name;
@@ -34,6 +43,15 @@ public class Contact implements Serializable {
         this.prov = prov;
     }
 
+    /**
+     * same as constructor, but update the values instead of creating a new object
+     * @param uid
+     * @param name
+     * @param busiType
+     * @param busiNum
+     * @param address
+     * @param prov
+     */
     public void updateData(String uid, String name, String busiType, int busiNum, String address, String prov){
         this.uid = uid;
         this.name = name;

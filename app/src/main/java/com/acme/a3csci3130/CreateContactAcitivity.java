@@ -17,6 +17,10 @@ public class CreateContactAcitivity extends Activity {
     private RadioGroup typeField, provinceField;
     private MyApplicationData appState;
 
+    /**
+     * Runs on creation
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,11 @@ public class CreateContactAcitivity extends Activity {
         provinceField = (RadioGroup) findViewById(R.id.province);
     }
 
+    /**
+     * Submits the new contact to Firebase when the button is clicked
+     * Gets the values from the appropriate UI fields
+     * @param v
+     */
     public void submitInfoButton(View v) {
         //each entry needs a unique ID
 
@@ -48,6 +57,11 @@ public class CreateContactAcitivity extends Activity {
 
     }
 
+    /**
+     * Finds the value of the selected radio button in a given radio group
+     * @param rg radio group to be checked
+     * @return the value of the selected option
+     */
     public String findRadioValue(RadioGroup rg){
         int id= rg.getCheckedRadioButtonId();
         View radioButton = rg.findViewById(id);

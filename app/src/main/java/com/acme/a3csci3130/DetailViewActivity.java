@@ -16,6 +16,10 @@ public class DetailViewActivity extends Activity {
     Contact receivedPersonInfo;
     private String personID;
 
+    /**
+     * Runs on creation
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,15 +47,31 @@ public class DetailViewActivity extends Activity {
         }
     }
 
+    /**
+     * should find the id of the radio button corresponding to the business type
+     * currently does not work
+     * @param c Contact object being looked at
+     * @return the id
+     */
     public int findType(Contact c) {
         String t = c.busiType;
         int r = getResources().getIdentifier(t,"RadioButton", "com.acme.a3csci3130");
         return r;
     }
+
+    /**
+     * Same as above effectively, except not yet implemented
+     * @param c
+     * @return
+     */
     public int findProv(Contact c){
         return 0;
     };
 
+    /**
+     * Updates the contact data in firebase
+     * @param v
+     */
     public void updateContact(View v){
         String name = nameField.getText().toString();
         int busiNum = Integer.parseInt(numField.getText().toString());
@@ -64,6 +84,11 @@ public class DetailViewActivity extends Activity {
         finish();
     }
 
+    /**
+     * Find the value of the selected radio button in a given radio group
+     * @param rg radio group
+     * @return the selected value
+     */
     public String findRadioValue(RadioGroup rg){
         int id= rg.getCheckedRadioButtonId();
         View radioButton = rg.findViewById(id);
@@ -72,6 +97,11 @@ public class DetailViewActivity extends Activity {
         String value = (String) btn.getText();
         return value;
     }
+
+    /**
+     * removes the selected contact from firebase
+     * @param v
+     */
     public void eraseContact(View v)
     {
         appState.firebaseReference.child(personID).setValue(null);

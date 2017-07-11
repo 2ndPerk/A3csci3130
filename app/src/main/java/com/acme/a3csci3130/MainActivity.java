@@ -17,6 +17,10 @@ public class MainActivity extends Activity {
     private ListView contactListView;
     private FirebaseListAdapter<Contact> firebaseAdapter;
 
+    /**
+     * Creates stuff when app is started
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,12 +56,20 @@ public class MainActivity extends Activity {
         });
     }
 
+    /**
+     * moves to create contact view
+     * @param v
+     */
     public void createContactButton(View v)
     {
         Intent intent=new Intent(this, CreateContactAcitivity.class);
         startActivity(intent);
     }
 
+    /**
+     * moves to view/edit contact view
+     * @param person the contact to be viewed/edited
+     */
     private void showDetailView(Contact person)
     {
         Intent intent = new Intent(this, DetailViewActivity.class);
