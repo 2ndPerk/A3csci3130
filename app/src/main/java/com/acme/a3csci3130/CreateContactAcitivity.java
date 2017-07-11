@@ -8,8 +8,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.google.firebase.database.DatabaseReference;
-
 public class CreateContactAcitivity extends Activity {
 
     private Button submitButton;
@@ -28,10 +26,10 @@ public class CreateContactAcitivity extends Activity {
         //Get the app wide shared variables
         appState = ((MyApplicationData) getApplicationContext());
 
-        submitButton = (Button) findViewById(R.id.submitButton);
+        submitButton = (Button) findViewById(R.id.newContactButton);
         nameField = (EditText) findViewById(R.id.name);
         numField = (EditText) findViewById(R.id.busiNum);
-        adField = (EditText) findViewById(R.id.Address);
+        adField = (EditText) findViewById(R.id.address);
         typeField = (RadioGroup) findViewById(R.id.primBusi);
         provinceField = (RadioGroup) findViewById(R.id.province);
     }
