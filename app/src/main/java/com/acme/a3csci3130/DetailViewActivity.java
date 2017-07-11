@@ -73,15 +73,17 @@ public class DetailViewActivity extends Activity {
      * @param v
      */
     public void updateContact(View v){
-        String name = nameField.getText().toString();
-        int busiNum = Integer.parseInt(numField.getText().toString());
-        String address = adField.getText().toString();
-        String busiType = findRadioValue(typeField);
-        String prov = findRadioValue(provinceField);
-        receivedPersonInfo.updateData(personID, name, busiType, busiNum, address, prov);
-        appState.firebaseReference.child(personID).setValue(receivedPersonInfo);
+        if(!(findRadioValue(typeField).equals("null")||findRadioValue(provinceField).equals("null"))) {
+            String name = nameField.getText().toString();
+            int busiNum = Integer.parseInt(numField.getText().toString());
+            String address = adField.getText().toString();
+            String busiType = findRadioValue(typeField);
+            String prov = findRadioValue(provinceField);
+            receivedPersonInfo.updateData(personID, name, busiType, busiNum, address, prov);
+            appState.firebaseReference.child(personID).setValue(receivedPersonInfo);
 
-        finish();
+            finish();
+        }
     }
 
     /**

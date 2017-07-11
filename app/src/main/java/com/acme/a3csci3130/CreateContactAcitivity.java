@@ -41,17 +41,18 @@ public class CreateContactAcitivity extends Activity {
      */
     public void submitInfoButton(View v) {
         //each entry needs a unique ID
+        if(!(findRadioValue(typeField).equals("null")||findRadioValue(provinceField).equals("null"))){
+            String personID = appState.firebaseReference.push().getKey();
+            String name = nameField.getText().toString();
+            int busiNum = Integer.parseInt(numField.getText().toString());
+            String address = adField.getText().toString();
+            String busiType = findRadioValue(typeField);
+            String prov = findRadioValue(provinceField);
+            Contact business = new Contact(personID, name, busiType, busiNum, address, prov);
+            appState.firebaseReference.child(personID).setValue(business);
 
-        String personID = appState.firebaseReference.push().getKey();
-        String name = nameField.getText().toString();
-        int busiNum = Integer.parseInt(numField.getText().toString());
-        String address = adField.getText().toString();
-        String busiType = findRadioValue(typeField);
-        String prov = findRadioValue(provinceField);
-        Contact business = new Contact(personID, name, busiType, busiNum, address, prov);
-        appState.firebaseReference.child(personID).setValue(business);
-
-        finish();
+            finish();
+        }
 
     }
 
@@ -64,6 +65,7 @@ public class CreateContactAcitivity extends Activity {
         int id= rg.getCheckedRadioButtonId();
         View radioButton = rg.findViewById(id);
         int radioId = rg.indexOfChild(radioButton);
+        if(radioId == -1)return("null");
         RadioButton btn = (RadioButton) rg.getChildAt(radioId);
         String value = (String) btn.getText();
         return value;
